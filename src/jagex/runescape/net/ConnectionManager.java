@@ -3,6 +3,7 @@ package jagex.runescape.net;
 import java.net.InetSocketAddress;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.jboss.netty.bootstrap.ServerBootstrap;
@@ -35,7 +36,7 @@ public final class ConnectionManager {
 	bootstrap.setOption("tcpNoDelay", true);
 	bootstrap.setOption("keepAlive", true);
 	bootstrap.bind(new InetSocketAddress(43594));
-	logger.info("Listening on: " + 43594);
+	logger.log(Level.INFO, "Listening on: " + 43594);
     }
 
     /**
