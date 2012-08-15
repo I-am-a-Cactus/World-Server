@@ -1,7 +1,5 @@
 package jagex.runescape;
 
-import jagex.runescape.net.ConnectionManager;
-
 /**
  * Server.java
  * 
@@ -19,14 +17,13 @@ public final class Server {
     public static void main(String[] args) {
 	try {
 	    System.out.println(Constants.TAG);
-	    ConnectionManager.getInstance().init();
 	} catch (Throwable t) {
 	    t.printStackTrace();
 	}
     }
 
     /**
-     * Blank constructor to prevent creation of this class.
+     * Default private constructor to prevent instantiation by other classes.
      */
     private Server() { }
 

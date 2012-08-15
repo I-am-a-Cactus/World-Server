@@ -11,16 +11,13 @@ import org.jboss.netty.buffer.ChannelBuffer;
  */
 public final class BufferUtils {
 
-    /** the instance for this class */
-    private static BufferUtils instance;
-
     /**
      * Reads a string from a buffer.
      * 
      * @param buf The buffer to read from.
      * @return The product string which was builded by reading the buffer.
      */
-    public String readString(ChannelBuffer buf) {
+    public static String readString(ChannelBuffer buf) {
 	StringBuilder bldr = new StringBuilder();
 	byte b;
 	while (buf.readable() && (b = buf.readByte()) != 10) {
@@ -35,27 +32,15 @@ public final class BufferUtils {
      * @param buf The buffer to write to.
      * @param string The string to write.
      */
-    public void writeString(ChannelBuffer buf, String string) {
+    public static void writeString(ChannelBuffer buf, String string) {
 	for (char c : string.toCharArray()) {
 	    buf.writeByte(c);
 	}
 	buf.writeByte(10);
     }
-
+    
     /**
-     * Gets and creates the instance for this class
-     * 
-     * @return the instance
-     */
-    public static BufferUtils getInstance() {
-	if (instance == null) {
-	    instance = new BufferUtils();
-	}
-	return instance;
-    }
-
-    /**
-     * Blank constructor to prevent this class from being created
+     * Default private constructor to prevent instantiation by other classes.
      */
     private BufferUtils() { }
 

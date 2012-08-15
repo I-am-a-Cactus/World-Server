@@ -130,7 +130,7 @@ public final class Constants {
     }
 
     /**
-     * Blank constructor to prevent this class from being created.
+     * Default private constructor to prevent instantiation by other classes.
      */
     private Constants() { }
 

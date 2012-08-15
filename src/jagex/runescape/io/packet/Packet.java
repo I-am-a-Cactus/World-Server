@@ -147,7 +147,7 @@ public class Packet {
     public int getLength() {
 	return buffer.readableBytes();
     }
-    
+
     /**
      * Checks if the packet is headless
      * 
