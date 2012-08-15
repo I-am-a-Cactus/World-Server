@@ -60,7 +60,7 @@ public final class PacketBuilder {
     }
 
     /**
-     * Puts {@code #numBits} into the buffer with the value {@code #value}.
+     * Puts a number of bits into the buffer
      * 
      * @param numBits The number of bits to put into the buffer.
      * @param value The value.
