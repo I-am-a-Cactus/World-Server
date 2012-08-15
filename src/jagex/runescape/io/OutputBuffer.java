@@ -210,7 +210,7 @@ public final class OutputBuffer extends Packet {
     /**
      * Writes numerous <code>long</code>s to the buffer.
      * 
-     * @param b The array of longs to write.
+     * @param l The array of longs to write.
      * @return This writer's instance, for chaining.
      * @throws IllegalArgumentException should the length of <tt>v</vv> be less than <tt>1</tt>.
      */
