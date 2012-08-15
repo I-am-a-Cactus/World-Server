@@ -33,16 +33,7 @@ public final class ChannelHandler extends SimpleChannelHandler {
     }
 
     @Override
-    public void messageReceived(final ChannelHandlerContext ctx, final MessageEvent e) {
-	if (!(e.getMessage() instanceof Boolean)) {
-	    throw new RuntimeException();
-	}
-	final boolean validMessage = (Boolean) e.getMessage();
-	if (validMessage) {
-	    return;
-	}
-	ctx.getChannel().close();
-    }
+    public void messageReceived(final ChannelHandlerContext ctx, final MessageEvent e) { }
 
     /**
      * Gets and creates the instance for this class
