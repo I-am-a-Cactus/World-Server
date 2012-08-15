@@ -10,6 +10,7 @@ import org.jboss.netty.channel.SimpleChannelHandler;
 
 /**
  * ChannelHandler.java
+ * 
  * @author Ryley M. Kimmel <ryley.kimmel@live.com>
  * @version 1.0
  * Aug 14, 2012
@@ -46,10 +47,5 @@ public final class ChannelHandler extends SimpleChannelHandler {
 	}
 	return instance;
     }
-
-    /**
-     * Blank constructor to prevent this class from being created
-     */
-    private ChannelHandler() { }
 
 }

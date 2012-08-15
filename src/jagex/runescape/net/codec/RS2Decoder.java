@@ -10,6 +10,7 @@ import org.jboss.netty.handler.codec.frame.FrameDecoder;
 
 /**
  * RS2Encoder.java
+ * 
  * @author Ryley M. Kimmel <ryley.kimmel@live.com>
  * @version 1.0
  * Aug 15, 2012

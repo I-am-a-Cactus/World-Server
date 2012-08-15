@@ -12,6 +12,7 @@ import org.jboss.netty.handler.codec.oneone.OneToOneEncoder;
 
 /**
  * RS2Encoder.java
+ * 
  * @author Ryley M. Kimmel <ryley.kimmel@live.com>
  * @version 1.0
  * Aug 15, 2012
@@ -68,10 +69,5 @@ public final class RS2Encoder extends OneToOneEncoder {
 	}
 	return instance;
     }
-
-    /**
-     * Blank constructor to prevent this class from being created
-     */
-    private RS2Encoder() { }
 
 }

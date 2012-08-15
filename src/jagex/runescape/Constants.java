@@ -2,6 +2,7 @@ package jagex.runescape;
 
 /**
  * Constants.java
+ * 
  * @author Ryley M. Kimmel <ryley.kimmel@live.com>
  * @version 1.0
  * Aug 14, 2012
