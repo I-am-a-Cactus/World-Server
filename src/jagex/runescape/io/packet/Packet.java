@@ -146,5 +146,14 @@ public class Packet {
     public int getLength() {
 	return buffer.readableBytes();
     }
+    
+    /**
+     * Checks if the packet is headless
+     * 
+     * @return <code>true</code> if the operation code is equal to <tt>-1</tt>.
+     */
+    public boolean isHeadless() {
+	return opCode == -1;
+    }
 
 }
