@@ -41,6 +41,8 @@ public final class ConnectionManager {
 
     /**
      * Gets and creates the instance for this class
+     * 
+     * @return the instance
      */
     public static ConnectionManager getInstance() {
 	if (instance == null) {

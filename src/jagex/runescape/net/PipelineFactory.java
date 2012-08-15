@@ -1,5 +1,7 @@
 package jagex.runescape.net;
 
+import jagex.runescape.net.codec.RS2Encoder;
+
 import org.jboss.netty.channel.ChannelPipeline;
 import org.jboss.netty.channel.ChannelPipelineFactory;
 import org.jboss.netty.channel.Channels;
@@ -19,11 +21,14 @@ public final class PipelineFactory implements ChannelPipelineFactory {
     public ChannelPipeline getPipeline() {
 	final ChannelPipeline pipeline = Channels.pipeline();
 	pipeline.addFirst("handler", ChannelHandler.getInstance());
+	pipeline.addLast("encoder", RS2Encoder.getInstance());
 	return pipeline;
     }
 
     /**
      * Gets and creates the instance for this class
+     * 
+     * @return the instance
      */
     public static PipelineFactory getInstance() {
 	if (instance == null) {

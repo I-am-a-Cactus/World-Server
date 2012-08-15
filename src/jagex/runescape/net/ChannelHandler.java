@@ -37,6 +37,8 @@ public final class ChannelHandler extends SimpleChannelHandler {
 
     /**
      * Gets and creates the instance for this class
+     * 
+     * @return the instance
      */
     public static ChannelHandler getInstance() {
 	if (instance == null) {
