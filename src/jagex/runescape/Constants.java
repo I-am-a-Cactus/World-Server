@@ -41,7 +41,7 @@ public final class Constants {
     public static final byte[] PACKET_SIZES = new byte[256];
 
     /**
-     * A static constructor to create the values for the packet lengths.
+     * initializes the values for the packet lengths.
      */
     static {
 	for (int id = 0; id < 256; ++id) {

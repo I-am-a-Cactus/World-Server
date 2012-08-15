@@ -33,7 +33,7 @@ public final class PipelineFactory implements ChannelPipelineFactory {
     }
 
     /**
-     * 
+     * Blank constructor to prevent this class from being created
      */
     private PipelineFactory() { }
 
