@@ -201,7 +201,7 @@ public final class InputBuffer extends Packet {
      * @return <code>true</code> if the buffer has greater
      * than <tt>0</tt> readable bytes.
      */
-    public boolean readable() {
+    public boolean isReadable() {
 	return buffer.readable();
     }
 
