@@ -38,7 +38,7 @@ public final class BufferUtils {
 	}
 	buf.writeByte(10);
     }
-    
+
     /**
      * Default private constructor to prevent instantiation by other classes.
      */
