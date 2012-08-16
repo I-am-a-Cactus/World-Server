@@ -68,31 +68,31 @@ public final class PacketBuilder {
      */
     public void writeBits(int numBits, final int value) {
 	int bytePos = bitIndex >> 3;
-	    int bitOffset = 8 - (bitIndex & 7);
-	    bitIndex += numBits;
+	int bitOffset = 8 - (bitIndex & 7);
+	bitIndex += numBits;
 
-	    int requiredSpace = (bytePos - buffer.writerIndex()) + 1;
-	    requiredSpace += (numBits + 7) / 8;
-	    buffer.ensureWritableBytes(requiredSpace);
+	int requiredSpace = (bytePos - buffer.writerIndex()) + 1;
+	requiredSpace += (numBits + 7) / 8;
+	buffer.ensureWritableBytes(requiredSpace);
 
-	    for (; numBits > bitOffset; bitOffset = 8) {
-		int tmp = buffer.getByte(bytePos);
-		tmp &= ~BIT_MASK[bitOffset];
-		tmp |= (value >> (numBits - bitOffset)) & BIT_MASK[bitOffset];
-		buffer.setByte(bytePos++, tmp);
-		numBits -= bitOffset;
-	    }
-	    if (numBits == bitOffset) {
-		int tmp = buffer.getByte(bytePos);
-		tmp &= ~BIT_MASK[bitOffset];
-		tmp |= value & BIT_MASK[bitOffset];
-		buffer.setByte(bytePos, tmp);
-	    } else {
-		int tmp = buffer.getByte(bytePos);
-		tmp &= ~(BIT_MASK[numBits] << (bitOffset - numBits));
-		tmp |= (value & BIT_MASK[numBits]) << (bitOffset - numBits);
-		buffer.setByte(bytePos, tmp);
-	    }
+	for (; numBits > bitOffset; bitOffset = 8) {
+	    int tmp = buffer.getByte(bytePos);
+	    tmp &= ~BIT_MASK[bitOffset];
+	    tmp |= (value >> (numBits - bitOffset)) & BIT_MASK[bitOffset];
+	    buffer.setByte(bytePos++, tmp);
+	    numBits -= bitOffset;
+	}
+	if (numBits == bitOffset) {
+	    int tmp = buffer.getByte(bytePos);
+	    tmp &= ~BIT_MASK[bitOffset];
+	    tmp |= value & BIT_MASK[bitOffset];
+	    buffer.setByte(bytePos, tmp);
+	} else {
+	    int tmp = buffer.getByte(bytePos);
+	    tmp &= ~(BIT_MASK[numBits] << (bitOffset - numBits));
+	    tmp |= (value & BIT_MASK[numBits]) << (bitOffset - numBits);
+	    buffer.setByte(bytePos, tmp);
+	}
     }
 
     /**
