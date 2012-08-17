@@ -16,6 +16,7 @@ public final class PipelineFactory implements ChannelPipelineFactory {
     @Override
     public ChannelPipeline getPipeline() {
 	final ChannelPipeline pipeline = Channels.pipeline();
+	pipeline.addLast("logic", new ChannelHandler());
 	return pipeline;
     }
 
