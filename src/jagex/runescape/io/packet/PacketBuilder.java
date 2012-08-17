@@ -67,7 +67,7 @@ public final class PacketBuilder {
      * @param value The value.
      */
     public void writeBits(int numBits, final int value) {
-	int bytePos = bitIndex >> 3;
+	int bytePos = bitIndex / 8;
 	int bitOffset = 8 - (bitIndex & 7);
 	bitIndex += numBits;
 
