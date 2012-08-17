@@ -1,5 +1,7 @@
 package jagex.runescape;
 
+import jagex.runescape.net.ConnectionHandler;
+
 /**
  * Server.java
  * 
@@ -17,6 +19,7 @@ public final class Server {
     public static void main(String[] args) {
 	try {
 	    System.out.println(Constants.TAG);
+	    ConnectionHandler.init();
 	} catch (Throwable t) {
 	    t.printStackTrace();
 	}
