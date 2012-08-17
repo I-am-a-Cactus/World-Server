@@ -25,7 +25,7 @@ public final class ConnectionHandler {
     /**
      * instantiates the <code>#bootstrap</code> and readies the server for incoming connections
      * 
-     * @throws if some error occurs
+     * @throws Throwable if some error occurs
      */
     public static void init() throws Throwable {
 	final SocketAddress address = new InetSocketAddress("localhost", 43594);
