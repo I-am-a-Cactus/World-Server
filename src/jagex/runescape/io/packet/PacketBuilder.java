@@ -67,6 +67,9 @@ public final class PacketBuilder {
      * @param value The value.
      */
     public void writeBits(int numBits, final int value) {
+	if ((numBits < 0) || (numBits > 32)) {
+	    throw new IllegalArgumentException("Number of bits must be between 1 and 32 inclusive");
+	}
 	int bytePos = bitIndex / 8;
 	int bitOffset = 8 - (bitIndex & 7);
 	bitIndex += numBits;
