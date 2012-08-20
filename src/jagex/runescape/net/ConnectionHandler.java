@@ -23,7 +23,7 @@ public final class ConnectionHandler {
     private static final Logger logger = Logger.getLogger(ConnectionHandler.class.getSimpleName());
 
     /**
-     * instantiates the {@code #bootstrap} and readies the server for incoming connections
+     * Instantiates the {@code #bootstrap} and readies the server for incoming connections
      * 
      * @throws Throwable if some I/O error occurs
      */
