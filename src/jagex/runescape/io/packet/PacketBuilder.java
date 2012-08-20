@@ -6,7 +6,7 @@ import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
 
 /**
- * PacketBuilder.java
+ * java
  * 
  * @author Ryley M. Kimmel <ryley.kimmel@live.com>
  * @version 1.0
@@ -22,7 +22,7 @@ public final class PacketBuilder {
      */
     static {
 	for (int i = 0; i < BIT_MASK.length; ++i) {
-	    BIT_MASK[i] = (1 << i) - 1;
+	    BIT_MASK[i] = 1 << (i - 1);
 	}
     }
 
@@ -51,8 +51,8 @@ public final class PacketBuilder {
      * Creates a new packet builder for a packet
      * 
      * @param opCode The operation code which is used to associate the data piece with it's handler.
-     * @param type The type of packet. This marks the additions needed and 
-     * the type of recognition variables which need to be also 
+     * @param type The type of packet. This marks the additions needed and
+     * the type of recognition variables which need to be also
      * attributed towards an outgoing buffer.
      */
     public PacketBuilder(final int opCode, final Type type) {
@@ -68,7 +68,7 @@ public final class PacketBuilder {
      */
     public void writeBits(int numBits, final int value) {
 	if ((numBits < 0) || (numBits > 32)) {
-	    throw new IllegalArgumentException("Number of bits must be between 1 and 32 inclusive");
+	    throw new IllegalArgumentException("Number of bits must be between 1 and 32");
 	}
 	int bytePos = bitIndex / 8;
 	int bitOffset = 8 - (bitIndex & 7);

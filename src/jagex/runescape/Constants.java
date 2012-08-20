@@ -42,7 +42,7 @@ public final class Constants {
     public static final byte[] PACKET_SIZES = new byte[256];
 
     /**
-     * initializes the {@link #PACKET_SIZES} array.
+     * initializes the @{code PACKET_SIZES} array.
      */
     static {
 	for (int id = 0; id < 256; ++id) {

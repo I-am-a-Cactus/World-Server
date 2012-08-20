@@ -5,7 +5,7 @@ import org.jboss.netty.channel.ChannelPipelineFactory;
 import org.jboss.netty.channel.Channels;
 
 /**
- * PipelineFactoru.java
+ * PipelineFactory.java
  * 
  * @author Ryley M. Kimmel <ryley.kimmel@live.com>
  * @version 1.0
@@ -13,7 +13,11 @@ import org.jboss.netty.channel.Channels;
  */
 public final class PipelineFactory implements ChannelPipelineFactory {
 
-    @Override
+    /**
+     * Returns the {@link ChannelHandler} of the specified type in this pipeline.
+     *
+     * @return the handler of the specified handler type.
+     */
     public ChannelPipeline getPipeline() {
 	final ChannelPipeline pipeline = Channels.pipeline();
 	pipeline.addLast("logic", new ChannelHandler());
