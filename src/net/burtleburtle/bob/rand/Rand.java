@@ -25,7 +25,7 @@ package net.burtleburtle.bob.rand;
  * 
  * @author Bob Jenkins
  */
-public final class IsaacRandom {
+public final class Rand {
 
     /**
      * The golden ratio.
@@ -80,7 +80,7 @@ public final class IsaacRandom {
     /**
      * Creates the random number generator without an initial seed.
      */
-    public IsaacRandom() {
+    public Rand() {
 	mem = new int[SIZE];
 	rsl = new int[SIZE];
 	init(false);
@@ -91,7 +91,7 @@ public final class IsaacRandom {
      * 
      * @param seed The seed.
      */
-    public IsaacRandom(int[] seed) {
+    public Rand(int[] seed) {
 	mem = new int[SIZE];
 	rsl = new int[SIZE];
 	for (int i = 0; i < seed.length; ++i) {
