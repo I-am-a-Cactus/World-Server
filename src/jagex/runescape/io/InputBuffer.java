@@ -1,8 +1,8 @@
 package jagex.runescape.io;
 
-import org.jboss.netty.buffer.ChannelBuffer;
-
 import jagex.runescape.io.packet.Packet;
+
+import org.jboss.netty.buffer.ChannelBuffer;
 
 /**
  * InputBuffer.java

@@ -1,5 +1,6 @@
 package jagex.runescape;
 
+import jagex.runescape.model.World;
 import jagex.runescape.net.ConnectionHandler;
 
 /**
@@ -20,6 +21,7 @@ public final class Server {
 	try {
 	    System.out.println(Constants.TAG);
 	    ConnectionHandler.init();
+	    World.init();
 	} catch (Throwable t) {
 	    t.printStackTrace();
 	}
