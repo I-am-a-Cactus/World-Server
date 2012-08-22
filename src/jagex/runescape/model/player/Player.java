@@ -11,13 +11,21 @@ import jagex.runescape.model.Entity;
  */
 public final class Player extends Entity {
 
+    /**
+     * Creates the player
+     * 
+     * @param index the index of this player
+     */
     public Player(int index) {
 	super(index);
     }
 
-    @Override
+    /**
+     * This method is used for processing entities every server cycle (600ms)
+     * 
+     * @throws Throwable if some error occurs
+     */
     public void process() throws Throwable {
-	System.out.println("Tick");
     }
 
 }
