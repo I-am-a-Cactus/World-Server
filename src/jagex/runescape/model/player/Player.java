@@ -25,7 +25,12 @@ public final class Player extends Entity {
      * 
      * @throws Throwable if some error occurs
      */
-    public void process() throws Throwable {
+    public void process() {
+	try {
+	    
+	} catch (Throwable t) {
+	    t.printStackTrace();
+	}
     }
 
 }

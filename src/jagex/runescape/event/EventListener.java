@@ -2,6 +2,7 @@ package jagex.runescape.event;
 
 import jagex.runescape.Constants;
 
+import java.io.File;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -33,6 +34,19 @@ public final class EventListener implements Runnable {
 
     /** The {@link ScheduledExecutorService} which schedules calls to the {@link #run()} method. */
     private final ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+
+    /**
+     * Loads and adds the events to their list
+     * 
+     * @throws Throwable if some error occurs
+     */
+    public static void init() throws Throwable {
+	logger.log(Level.INFO, "Loading event listeners..");
+	for (File clazz : new File("./bin/jagex/runescape/event/impl/").listFiles()) {
+	    events.add((Event) Class.forName("jagex.runescape.event.impl." + clazz.getName().replace(".class", "")).newInstance());
+	}
+	logger.log(Level.INFO, "Loaded " + events.size() + " event listeners.");
+    }
 
     /**
      * Handles an {@link Event} that has been added to the {@value #events} list

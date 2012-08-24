@@ -3,7 +3,6 @@ package jagex.runescape.model;
 import jagex.runescape.Constants;
 import jagex.runescape.event.Event;
 import jagex.runescape.event.EventListener;
-import jagex.runescape.event.impl.PlayerProcessEvent;
 import jagex.runescape.model.player.Player;
 import jagex.runescape.util.EntityList;
 
@@ -20,7 +19,7 @@ public final class World {
     private static final EventListener eventListener = new EventListener();
 
     /** An @{link EntityList} contains all the players */
-    private final EntityList<Player> players = new EntityList<Player>(Constants.MAXIMUM_WORLD_PLAYERS);
+    private static final EntityList<Player> players = new EntityList<Player>(Constants.MAXIMUM_WORLD_PLAYERS);
 
     /**
      * Instantiates the {@link World}
@@ -28,7 +27,20 @@ public final class World {
      * @throws Throwable if some error occurs
      */
     public static void init() throws Throwable {
-	eventListener.handlesEvent(new PlayerProcessEvent());
+	World.getWorld().submit(new Event() {
+	    @Override
+	    protected void execute() {
+		final long started = System.currentTimeMillis();
+		for (final Player player : players) {
+		    if (player == null) {
+			continue;
+		    }
+		    player.process();
+		}
+		final long taken = System.currentTimeMillis() - started;
+		System.out.println("Taken: " + taken + "ms");
+	    }
+	});
     }
 
     /**
@@ -65,7 +77,7 @@ public final class World {
      * 
      * @param other the player were getting
      */
-    public Player getPlayer(Object other) {
+    public static Player getPlayer(Object other) {
 	for (Player player : players) {
 	    if (player.equals(other)) {
 		return player;
@@ -79,7 +91,7 @@ public final class World {
      * 
      * @return the players
      */
-    public EntityList<Player> getPlayers() {
+    public static EntityList<Player> getPlayers() {
 	return players;
     }
 
