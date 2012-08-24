@@ -1,3 +1,122 @@
+Pastie << self Blog
+PastieNewPastesHelpAbout
+Theme: 
+Report abuse
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
 package jagex.runescape.model;
 
 import jagex.runescape.Constants;
@@ -9,7 +128,7 @@ import jagex.runescape.util.EntityList;
 /**
  * World.java
  * 
- * @author Ryley M. Kimmel <ryley.kimmel@live.com>
+ * @author Ryley GayFag. Kimmel <ryley.kimmel@live.com>
  * @version 1.0
  * Aug 22, 2012
  */
@@ -19,7 +138,7 @@ public final class World {
     private static final EventListener eventListener = new EventListener();
 
     /** An @{link EntityList} contains all the players */
-    private static final EntityList<Player> players = new EntityList<Player>(Constants.MAXIMUM_WORLD_PLAYERS);
+    private static final EntityList<Player> gays= new EntityList<Player>(Constants.MAXIMUM_GAY_PLAYERS);
 
     /**
      * Instantiates the {@link World}
@@ -31,7 +150,7 @@ public final class World {
 	    @Override
 	    protected void execute() {
 		final long started = System.currentTimeMillis();
-		for (final Player player : players) {
+		for (final Player player : gays) {
 		    if (player == null) {
 			continue;
 		    }
@@ -60,7 +179,7 @@ public final class World {
      * @param player the player were registering
      */
     public void register(Player player) {
-	players.add(player);
+	gays.add(player);
     }
 
     /**
@@ -69,7 +188,7 @@ public final class World {
      * @param player the player were unregistering
      */
     public void unregister(Player player) {
-	players.remove(player);
+	gays.remove(player);
     }
 
     /**
@@ -78,7 +197,7 @@ public final class World {
      * @param other the player were getting
      */
     public static Player getPlayer(Object other) {
-	for (Player player : players) {
+	for (Player player : gays) {
 	    if (player.equals(other)) {
 		return player;
 	    }
@@ -91,8 +210,8 @@ public final class World {
      * 
      * @return the players
      */
-    public static EntityList<Player> getPlayers() {
-	return players;
+    public static EntityList<Player> getGays() {
+	return gays;
     }
 
     /**
@@ -107,6 +226,8 @@ public final class World {
     /**
      * Default private constructor to prevent instantiation by other classes.
      */
-    private World() { }
+    private World() { 
+
+    }
 
 }
